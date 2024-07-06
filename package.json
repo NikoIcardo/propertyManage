@@ -1,0 +1,27 @@
+{
+  "name": "propertymanage",
+  "version": "1.0.0",
+  "description": "a property management portal for tenants and owners",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node ./server/index.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --config webpack.client.config.mjs --mode production",
+    "build:server": "webpack --config webpack.server.config.mjs --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3",
+    "url": "^0.11.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}

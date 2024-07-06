@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "jsx": "react",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitAny": true,
+      "module": "CommonJS",
+      "sourceMap": true,
+      "outDir": "./dist"
+    },
+    "include": ["app/**/*", "./server/**/*.ts"]
+  }
+  
