@@ -19,10 +19,24 @@ export default {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
     ],
   },
   devServer: {
+    static: path.join(__dirname, 'dist'),
+    compress: true,
     port: 3000,
     hot: true,
+    proxy: [{
+      '/api': 'http://localhost:9000', // Proxy API requests to the back end server
+    }],
+    historyApiFallback: true, // For single-page applications
+    client: {
+      logging: 'none', // Disable logging in the browser console
+      overlay: false, // Disable the error overlay in the browser
+    },
   },
 };

@@ -24,6 +24,7 @@ export default {
     ],
   },
   node: {
-    __dirname: false, // Preserve the __dirname variable
+    __dirname: false, // For proper directory handling in Node.js
+    __filename: false,
   },
 };

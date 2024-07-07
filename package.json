@@ -4,7 +4,10 @@
   "description": "a property management portal for tenants and owners",
   "main": "index.ts",
   "scripts": {
-    "start": "node ./server/index.ts",
+    "start": "node ./dist-server/server.js",
+    "dev": "concurrently \"npm run front\" \"npm run back\"",
+    "front": "webpack serve --config webpack.client.config.mjs",
+    "back": "nodemon --watch 'server/**/*.ts' --exec 'webpack --config webpack.server.config.mjs && node dist-server/server.js' --ext ts",
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --config webpack.client.config.mjs --mode production",
     "build:server": "webpack --config webpack.server.config.mjs --mode production"
@@ -14,14 +17,24 @@
   "dependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.2",
     "express": "^4.19.2",
+    "postcss-loader": "^8.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1",
+    "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.3",
     "url": "^0.11.3",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
   }
 }
