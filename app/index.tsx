@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import {
   createBrowserRouter,
@@ -7,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Home from './components/home/Home';
+import configureStore from "./redux/configureStore"
 
 const router = createBrowserRouter([
   {
@@ -19,9 +21,11 @@ import './styles/tailwind.css';
 
 const App = () => {
   return (
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+    <Provider store={configureStore}>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </Provider>
   );
 };
 
