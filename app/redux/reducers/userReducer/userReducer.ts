@@ -1,3 +1,7 @@
+export interface User {
+  username: string;
+  email: string;
+}
 const initialState = {
   username: "",
   email: "",

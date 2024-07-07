@@ -1,9 +1,12 @@
 module.exports = {
-  content: [
-    './app/**/*.{html,js,jsx,ts,tsx}', // Adjust according to your project's file structure
-  ],
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkblue: "#1e3a8a", // Example color, change as needed
+        lightpurple: "#7c3aed", // Example color, change as needed
+      },
+    },
   },
   plugins: [],
-}
+};
